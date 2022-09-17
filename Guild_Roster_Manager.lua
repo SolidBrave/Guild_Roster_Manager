@@ -44,7 +44,7 @@ GRM_G.addonName = "Guild_Roster_Manager";
 -- Player Details
 GRM_G.guildName = "";
 GRM_G.realmName = string.gsub ( string.gsub ( GetRealmName() , "-" , "" ) , "%s+" , "" );       -- Remove the space since server return calls don't include space on multi-name servers, also removes a hyphen if server is hyphened.
-GRM_G.addonPlayerName = ( GetUnitName ( "PLAYER" , false ) .. "-" .. GRM_G.realmName );
+GRM_G.addonPlayerName = ( GetUnitName ( "PLAYER" , false ) .. "-" .. string.lower(GRM_G.realmName));
 GRM_G.faction = UnitFactionGroup ( "PLAYER" );
 GRM_G.rank = 1;
 GRM_G.FID = 0;               -- index for Horde = 1; Ally = 2
